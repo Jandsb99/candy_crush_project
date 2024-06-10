@@ -31,8 +31,9 @@ for l in matriu:
     print(l)
 
 
+# Creació del bucle de joc
 
-
+# Condició d'aturada del bucle --> si el jugador dona un -1 s'atura el bucle
+# Estat de la matriu, s'ha de poder fer swap (el jugador ha de poder donar dues coordenades i canviar-les
 
 # Primer crear matriu, després canviar posicions (SWAP), després comprovar posicions i si son iguals eliminar (CLEAR)
-# Condició d'aturada del bucle --> si el jugador dona un -1 s'atura el bucle
