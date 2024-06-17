@@ -1,5 +1,6 @@
 # Llibreries
 import random
+from screen_manager import ScreenManager
 
 # Inici del codi
 
@@ -23,7 +24,7 @@ linia = []
 
 for i in range(valor_matriu):
     for i in range(valor_matriu):
-        linia.append(random.randint(0,9))
+        linia.append(random.randint(1,valor_matriu))
     matriu.append(linia)
     linia = []
 
@@ -33,7 +34,19 @@ for l in matriu:
 
 # Creació del bucle de joc
 
-# Condició d'aturada del bucle --> si el jugador dona un -1 s'atura el bucle
-# Estat de la matriu, s'ha de poder fer swap (el jugador ha de poder donar dues coordenades i canviar-les
+matriu_joc = ScreenManager(matriu)
 
-# Primer crear matriu, després canviar posicions (SWAP), després comprovar posicions i si son iguals eliminar (CLEAR)
+while True:
+    print("Introdueix les coordenades que vols intercanviar:  (introdueix valor i prem enter)")
+    x0 = int(input())
+    if x0 == -1:
+        break
+    y0 = int(input())
+    x1 = int(input())
+    y1 = int(input())
+
+    matriu_joc.rearrange(x0, y0, x1, y1)
+    matriu_joc.clear(x0, y0)
+    matriu_joc.clear(x1, y1)
+
+    print(matriu_joc.matriu)
